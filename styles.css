@@ -407,8 +407,8 @@ header.navbar {
 }
 
 .brand-logo {
-    width: 90px; /* Uniform logo size */
-    height: 90px; /* Uniform logo size */
+    width: 85px; /* Uniform logo size */
+    height: 85px; /* Uniform logo size */
     object-fit: contain; /* Maintain aspect ratio */
     margin-bottom: 15px; /* Space between logo and text */
 }
