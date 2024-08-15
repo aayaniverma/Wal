@@ -414,7 +414,7 @@ header.navbar {
 }
 
 .brand-name {
-    font-size: 18px; /* Readable text size */
+    font-size: 16px; /* Readable text size */
     font-weight: 500; /* Medium font weight */
     margin: 0;
     color: #333; /* Dark color for readability */
