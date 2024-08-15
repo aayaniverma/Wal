@@ -1,0 +1,453 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: RGB(255, 194, 32);
+}
+
+/* Overa ll header styling */
+header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(178, 195, 200, 0.931);
+    color: white;
+    padding: 5px 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    height: 50px;
+}
+
+/* Logo styling */
+#company-logo {
+    height: 30px;
+    width: auto;
+}
+
+/* Search bar styling */
+.search-bar {
+    border: none;
+    border-radius: 25px;
+    padding: 8px 15px;
+    font-size: 14px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 300px;
+    transition: background-color 0.3s ease;
+}
+
+/* Search button styling */
+.search-btn {
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #a4b4c5, #727578);
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn:hover {
+    background: linear-gradient(145deg, #0056b3, #003d7a);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.search-btn:active {
+    background: linear-gradient(145deg, #003d7a, #0056b3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    header.navbar {
+        padding: 5px 10px;
+        height: 45px;
+    }
+
+    .search-bar {
+        font-size: 14px;
+        width: 200px;
+    }
+
+    #company-logo {
+        height: 25px;
+    }
+
+    .search-btn {
+        font-size: 14px;
+    }
+}
+
+.drawer-toggle-btn {
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    position: fixed;
+    top: 70px;
+    left: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover and Focus Styling */
+.drawer-toggle-btn:hover,
+.drawer-toggle-btn:focus {
+    background-color: #f0f0f0;
+    color: #007bff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active State */
+.drawer-toggle-btn:active {
+    background-color: #e0e0e0;
+}
+
+/* Drawer Styles */
+.drawer {
+    height: 100%;
+    width: 280px;
+    position: fixed;
+    z-index: 1000;
+    top: 60px;
+    left: -280px;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: left 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-right: 1px solid #ddd;
+}
+
+/* Show Drawer */
+.drawer.open {
+    left: 0;
+}
+
+/* Navigation Links */
+.drawer a {
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    display: block;
+    transition: color 0.3s, background-color 0.3s, padding-left 0.3s, font-weight 0.3s;
+    border-radius: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hover Effect on Links */
+.drawer a:hover {
+    color: #ffffff;
+    background-color: #96989a;
+    padding-left: 30px;
+    font-weight: 600;
+}
+
+/* Hover Effect on Drawer */
+.drawer:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Subcategories Styles */
+.sub-categories {
+    display: none;
+    padding-left: 20px;
+    background-color: #f1f1f1;
+    border-left: 2px solid #ddd;
+}
+
+.drawer .nav-item:hover .sub-categories {
+    display: block;
+}
+
+/* Subcategory Link Styles */
+.sub-categories .nav-item a {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #666;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.sub-categories .nav-item a:hover {
+    color: #ffffff;
+    background-color: #a0a2a4;
+}
+/* Carousel Styles */
+.single-image-section {
+    position: relative;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    width: 100%; /* Full width */
+    z-index: 1; /* Ensure it's behind the description box */
+    background: rgba(0, 0, 0, 0); /* Transparent background */
+    margin-bottom: 0; /* Ensure there's no margin at the bottom */
+}
+
+.single-image-section img {
+    object-fit: cover; /* Cover the container */
+    width: 100%;
+    height: 100%; /* Fill the container */
+}
+
+/* Text Below Image Styling */
+.text-below-image {
+    position: relative;
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+    backdrop-filter: blur(15px); /* Blur effect */
+    padding: 30px; /* Space around content */
+    border-radius: 0 0 15px 15px; /* Rounded corners only at the bottom */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Unified shadow for blending */
+    margin-top: -60px; /* Overlap to merge seamlessly */
+    z-index: 2; /* Ensure it's above the image */
+    border: none; /* Remove any borders */
+}
+
+/* Gradient Overlay for Seamless Blend */
+.text-below-image::before {
+    content: '';
+    position: absolute;
+    top: -60px; /* Position above the box */
+    left: 0;
+    width: 100%;
+    height: 60px; /* Height to cover the area where overlap occurs */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.85)); /* Ombre effect */
+    pointer-events: none; /* Prevent interaction */
+    z-index: -1; /* Place behind the content */
+}
+
+.text-below-image h2 {
+    font-size: 2.8rem; /* Larger font size for impact */
+    margin-bottom: 20px; /* Space below heading */
+    color: #1c1c1c; /* Dark color for contrast */
+    font-weight: 600; /* Semi-bold for emphasis */
+    letter-spacing: -0.5px; /* Slightly tighter letter spacing */
+    text-transform: capitalize; /* Capitalized text */
+    line-height: 1.2; /* Tighter line height */
+    font-family: 'Montserrat', sans-serif; /* Modern, clean font */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.text-below-image p {
+    font-size: 1.125rem; /* Slightly larger font size */
+    line-height: 1.7; /* Increased line spacing */
+    color: #4a4a4a; /* Neutral text color */
+    margin-bottom: 25px; /* Space below paragraphs */
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+}
+
+
+/* Brand Images Section */
+.brand-images {
+    text-align: center;
+    padding: 5px;
+    background-color: #f9f9f9; /* Light background color for the section */
+    border-radius: 10px; /* Rounded corners for the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for the section */
+    margin: 10px ; /* Adds margin around the section */
+}
+
+/* Header Styling */
+.brand-images h2 {
+    text-align: center;
+    margin-bottom: 40px; /* Space below the heading */
+    font-size: 32px; /* Larger font size for emphasis */
+    font-weight: 700; /* Bold font weight */
+    color: RGB(0,113,206); /* Dark color for text */
+    text-transform: uppercase; /* Uppercase text for formality */
+    letter-spacing: 1px; /* Increased letter spacing */
+    border-bottom: 3px solid RGB(0,113,206); /* Underline effect */
+    padding-bottom: 15px; /* Space between text and underline */
+    font-family: 'Roboto', sans-serif; /* Modern font */
+}
+/* Brand Box Styling */
+.brand-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Margin between rows */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Brand Content Styling */
+.brand-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Padding inside each box */
+    background-color: #fff; /* White background color for the box */
+    border-radius: 50%; /* Circular box */
+    border: 2px solid #ddd; /* Light border for the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 150px; /* Increased width for very large circular box */
+    height: 150px; /* Increased height for very large circular box */
+    margin: 0 10px; /* Reduced margin between boxes */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover Effect for Brand Content */
+.brand-content:hover {
+    transform: scale(1.1); /* Slightly enlarge the box on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
+/* Click Effect */
+.brand-content:active {
+    transform: scale(1.05); /* Slightly shrink the box on click */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Less pronounced shadow on click */
+}
+
+/* Brand Logo Styling */
+.brand-logo {
+    width: 80%; /* Image takes up 80% of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Ensure logo is circular */
+    object-fit: contain; /* Ensures the image fits within the circle without distortion */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover Effect for Brand Logo */
+.brand-content:hover .brand-logo {
+    opacity: 0.9; /* Slightly reduce opacity on hover */
+}
+
+/* Remove the brand name */
+.brand-name {
+    display: none; /* Hides the brand names */
+}
+
+.product-listing-section {
+    margin: 10px auto;
+    background-color: #faf4f4;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-listing-section h2 {
+    text-align: center;
+    margin-bottom: 40px; /* Space below the heading */
+    font-size: 32px; /* Larger font size for emphasis */
+    font-weight: 700; /* Bold font weight */
+    color: RGB(0,113,206); /* Dark color for text */
+    text-transform: uppercase; /* Uppercase text for formality */
+    letter-spacing: 1px; /* Increased letter spacing */
+    border-bottom: 3px solid RGB(0,113,206); /* Underline effect */
+    padding-bottom: 15px; /* Space between text and underline */
+    font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    flex: 1 1 calc(33% - 20px);
+    max-width: calc(33% - 20px);
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 40%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.price {
+    font-size: 16px;
+    color: #333;
+}
+
+.discounted-price {
+    font-weight: bold;
+    color: #e74c3c;
+    margin-right: 5px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+@media (max-width: 992px) {
+    .product-item {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+footer {
+    background-color: #333333; /* Darker background color for footer */
+    color: #ffffff; /* White text color */
+    padding: 20px; /* Padding around the footer */
+    text-align: center; /* Center text in footer */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    position: relative;
+    bottom: 0;
+    width: 100%; /* Full width */
+}
+
+/* Footer Links */
+footer a {
+    color: #ffffff; /* White text color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: 500; /* Medium font weight */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+footer a:hover {
+    color: #a0a0a0; /* Light grey color on hover */
+}
+
+.drawer-toggle-btn {
+    z-index: 1001; /* Ensure button stays on top */
+}

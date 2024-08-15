@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brands</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="brands.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="" alt="" id="company-logo">
+        </div>
+        <input type="text" class="form-control search-bar" id="search-bar" placeholder="Looking for something.. ?">
+        <button class="btn search-btn" id="search-btn" onclick="toggleSearch()">
+            <i class="fas fa-search"></i>
+        </button>
+    </header>
+
+    <button class="drawer-toggle-btn" id="drawer-toggle-btn" onclick="toggleDrawer()">☰</button>
+    
+    <nav class="drawer" id="drawer">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html" onclick="scrollToSection('home')">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="toggleSubCategories()">Categories</a>
+                <ul class="nav flex-column sub-categories" id="sub-categories">
+                    <li class="nav-item"><a class="nav-link" href="automotive.html">Automotives</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fashion.html">Fashion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="groceries.html">Groceries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="health.html">Health</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pets.html">Pets</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html" onclick="scrollToSection('about-us')">About</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="content" id="content">
+        <div class="single-image-section" id="home">
+            <img src="brandimages/greatvalue.png" class="d-block w-100" alt="Promotional Image">
+            <div class="text-below-image">
+                <h2>About GreatValue</h2>
+                <p>Great Value is Walmart's private label brand, offering a wide range of household and grocery items at affordable prices. Known for its commitment to quality and value, Great Value includes products like pantry staples, frozen foods, beverages, and household essentials. Overall, Great Value provides consumers with budget-friendly options without compromising on quality.</p>
+            </div>
+        </div>
+    </div>    
+        <div class="product-listing-section">
+            <h2>Our Products</h2>
+            <div class="product-row">
+                <div class="col-md-4 col-sm-6 col-12 product-item">
+                    <img src="product/product1.png" class="product-image" alt="Product 1">
+                    <div class="product-info">
+                        <h3>Frozen Broccoli Florets (12 oz)</h3>
+                        <p class="price"><span class="discounted-price">$1.10</span> <span class="original-price">$1.16</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 product-item">
+                    <img src="product/product2.png" class="product-image" alt="Product 2">
+                    <div class="product-info">
+                        <h3>Ultra Original Dish Liquid
+                        </h3>
+                        <p class="price"><span class="discounted-price">$5.00</span> <span class="original-price">$5.98</span></p>
+                    </div>
+                </div>
+                <!-- Add more product items as needed -->
+            </div>
+        </div>
+        
+    </div>
+
+    <footer>
+        <p>© 2024 Company Name. All rights reserved.</p>
+    </footer>
+
+    <script src="brands.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

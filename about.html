@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotives</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container-fluid d-flex align-items-center">
+            <div class="logo">
+                <img src="" alt="" id="company-logo">
+            </div>
+            <div class="search-bar-container d-flex align-items-center ml-auto">
+                <input type="text" class="form-control search-bar" id="search-bar" placeholder="Looking for something.. ?">
+                <button class="btn search-btn" id="search-btn" onclick="toggleSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <button class="drawer-toggle-btn" id="drawer-toggle-btn" onclick="toggleDrawer()">☰</button>
+    
+    <nav class="drawer" id="drawer">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html" onclick="scrollToSection('home')">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="toggleSubCategories()">Categories</a>
+                <ul class="nav flex-column sub-categories" id="sub-categories">
+                    <li class="nav-item"><a class="nav-link" href="automotive.html">Automotives</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fashion.html">Fashion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="groceries.html">Groceries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="health.html">Health</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pets.html">Pets</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html" onclick="scrollToSection('about-us')">About</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container mt-4">
+        <section class="mb-5" id="walmart-overview">
+            <div class="text-below-image">
+                <h2>About Walmart</h2>
+                <p>Walmart, one of the world's largest retailers, is renowned for its extensive range of products, competitive pricing, and convenient shopping experience. With over 11,000 stores across the globe and a robust online presence, Walmart offers unparalleled accessibility, catering to a diverse customer base. The company's commitment to affordability is reflected in its slogan, "Save Money. Live Better," ensuring that quality products are available to everyone.</p>
+                <p>Walmart's innovative use of technology, such as efficient supply chain management and data analytics, enhances operational efficiency and customer satisfaction. Its dedication to sustainability and community support further underscores its role as a responsible corporate citizen, making Walmart an indispensable and remarkable part of the retail landscape.</p>
+                
+                <img src="images/images.jpeg" class="d-block w-100 mt-4" alt="Promotional Image">
+    
+                <h2 class="mt-5">Why Their Home Grown Brands?</h2>
+                <p>Choosing Walmart's private label brands presents an exceptional value proposition for consumers. Walmart offers a wide range of private label products across various categories, from groceries and household items to clothing and electronics, all designed to meet rigorous quality standards. These brands often deliver the same quality as national brands but at significantly lower prices, enabling customers to maximize their savings.</p>
+                <p>Walmart's commitment to excellence ensures that its private label products are reliable, innovative, and tailored to the needs of its diverse customer base. By selecting Walmart's private label brands, shoppers can enjoy high-quality products, excellent value, and the convenience of finding everything they need in one place, making their shopping experience both economical and satisfying.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="text-center mt-4">
+        <p>© 2024 Company Name. All rights reserved.</p>
+    </footer>
+
+    <script src="about.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

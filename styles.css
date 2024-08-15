@@ -1,0 +1,518 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: RGB(255, 194, 32)
+}
+
+/* Overall header styling */
+header.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between logo and search bar */
+    align-items: center;
+    background-color: rgba(178, 195, 200, 0.931); /* Semi-transparent dark background */
+    color: white;
+    padding: 5px 10px; /* Reduced padding for a thinner navbar */
+    position: fixed;
+    width: 100%; /* Full width */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    top: 0;
+    left: 0;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    height: 50px; /* Fixed height for thinner navbar */
+}
+
+/* Logo styling */
+#company-logo {
+    height: 30px; /* Adjust size to fit the thinner navbar */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Search bar styling */
+.search-bar {
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 15px; /* Adjust padding */
+    font-size: 14px; /* Adjust font size */
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    color: white; /* Text color */
+    width: 300px; /* Adjust width as needed */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Search button styling */
+.search-btn {
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    background: linear-gradient(145deg, #a4b4c5, #727578); /* Gradient background */
+    color: white;
+    padding: 8px 16px; /* Adjust padding */
+    cursor: pointer;
+    font-size: 14px; /* Adjust font size */
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    margin-left: 10px; /* Space between search bar and button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.search-btn:hover {
+    background: linear-gradient(145deg, #0056b3, #003d7a); /* Darker gradient on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+}
+
+.search-btn:active {
+    background: linear-gradient(145deg, #003d7a, #0056b3); /* Even darker gradient on click */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Return to original shadow */
+    transform: translateY(1px); /* Slight movement to indicate press */
+}
+
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    header.navbar {
+        padding: 5px 10px; /* Adjust padding for smaller screens */
+        height: 45px; /* Further reduce height for mobile */
+    }
+
+    .search-bar {
+        font-size: 14px; /* Smaller font size for better readability */
+        width: 200px; /* Adjust width for mobile */
+    }
+
+    #company-logo {
+        height: 25px; /* Adjusted size for mobile */
+    }
+
+    .search-btn {
+        font-size: 14px; /* Smaller font size for the button */
+    }
+}
+
+.drawer-toggle-btn {
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #ffffff; /* Clean white background */
+    color: #333; /* Darker text color for contrast */
+    border: none;
+    padding: 12px; /* Slightly larger padding for a more spacious feel */
+    border-radius: 50%; /* Circular button */
+    position: fixed;
+    top: 70px; /* Position below the header */
+    left: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
+}
+
+/* Hover and Focus Styling */
+.drawer-toggle-btn:hover,
+.drawer-toggle-btn:focus {
+    background-color: #f0f0f0; /* Light grey background on hover/focus */
+    color: #007bff; /* Change text color on hover/focus */
+    transform: scale(1.05); /* Slightly enlarge button on hover/focus */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+}
+
+/* Active State */
+.drawer-toggle-btn:active {
+    background-color: #e0e0e0; /* Slightly darker grey when clicked */
+}
+
+
+/* Drawer Styles */
+.drawer {
+    height: 100%;
+    width: 280px; /* Slightly wider for better usability */
+    position: fixed;
+    z-index: 1000;
+    top: 60px; /* Below the header */
+    left: -280px;
+    background-color: #ffffff; /* White background for contrast */
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: left 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better depth */
+    border-right: 1px solid #ddd; /* Light border for separation */
+}
+
+/* Show Drawer */
+.drawer.open {
+    left: 0; /* Show drawer */
+}
+
+/* Navigation Links */
+.drawer a {
+    padding: 12px 20px; /* Comfortable padding */
+    text-decoration: none;
+    font-size: 18px;
+    color: #333; /* Dark text for readability */
+    display: block;
+    transition: color 0.3s, background-color 0.3s, padding-left 0.3s, font-weight 0.3s;
+    border-radius: 4px; /* Slightly rounded corners */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+}
+
+/* Hover Effect on Links */
+.drawer a:hover {
+    color: #ffffff; /* White text on hover */
+    background-color: #96989a; /* Modern blue background on hover */
+    padding-left: 30px; /* Indentation effect on hover */
+    font-weight: 600; /* Slightly bolder font on hover */
+}
+
+/* Hover Effect on Drawer */
+.drawer:hover {
+    background-color: #f8f9fa; /* Slightly transparent white on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Subcategories Styles */
+.sub-categories {
+    display: none; /* Hide subcategories initially */
+    padding-left: 20px; /* Indentation for subcategories */
+    background-color: #f1f1f1; /* Light background for subcategories */
+    border-left: 2px solid #ddd; /* Border to separate from main categories */
+}
+
+.drawer .nav-item:hover .sub-categories {
+    display: block; /* Show subcategories on hover */
+}
+
+/* Subcategory Link Styles */
+.sub-categories .nav-item a {
+    padding: 10px 20px; /* Comfortable padding */
+    font-size: 16px; /* Slightly smaller font size for subcategories */
+    color: #666; /* Lighter text color for subcategories */
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.sub-categories .nav-item a:hover {
+    color: #ffffff; /* White text on hover */
+    background-color: #a0a2a4; /* Modern blue background on hover */
+}
+
+.sub-categories {
+    display: none;
+    padding-left: 20px;
+}
+
+.sub-categories a {
+    font-size: 16px;
+}
+
+/* Carousel Styles */
+#carouselExampleControls {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    width: 100%; /* Full width */
+    height: 500px; /* Default height */
+    margin: 0; /* No margin */
+    z-index: 1; /* Ensure it's behind the description box */
+    background: rgba(0, 0, 0, 0); /* Transparent background */
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Fill the container */
+}
+
+.carousel-item img {
+    object-fit: cover; /* Cover the container */
+    height: 100%;
+    width: 100%;
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px; /* Control size */
+    height: 40px; /* Control size */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+    border-radius: 50%; /* Circular controls */
+    z-index: 2; /* Ensure controls are on top */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker icon background */
+    border-radius: 50%; /* Circular controls */
+}
+
+.carousel-control-prev-icon::after,
+.carousel-control-next-icon::after {
+    font-size: 20px; /* Icon size */
+    color: #fff; /* White icon color */
+}
+
+/* Content Section Styling */
+#content {
+    position: relative;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    padding: 0; /* No padding */
+    margin: 0; /* No margin */
+}
+
+/* Description Box Styling */
+.company-description {
+    position: relative;
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+    backdrop-filter: blur(15px); /* Increased blur effect */
+    padding: 30px; /* Space around content */
+    border-radius: 0 0 15px 15px; /* Rounded corners only at the bottom */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Unified shadow for blending */
+    margin-top: -60px; /* Overlap to merge seamlessly */
+    z-index: 1; /* Ensure it's above carousel */
+    border: none; /* Remove any borders */
+}
+
+/* Gradient Overlay for Seamless Blend */
+.company-description::before {
+    content: '';
+    position: absolute;
+    top: -60px; /* Position above the box */
+    left: 0;
+    width: 100%;
+    height: 60px; /* Height to cover the area where overlap occurs */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.85)); /* Ombre effect */
+    pointer-events: none; /* Prevent interaction */
+    z-index: -1; /* Place behind the content */
+}
+
+.company-description h2 {
+    font-size: 2.8rem; /* Larger font size for impact */
+    margin-bottom: 20px; /* Increased space below heading */
+    color: #1c1c1c; /* Dark color for high contrast */
+    font-weight: 600; /* Semi-bold for a modern appearance */
+    letter-spacing: -0.5px; /* Slightly tighter letter spacing */
+    text-transform: capitalize; /* Capitalized for a modern touch */
+    line-height: 1.2; /* Tighter line height for a sleek look */
+    font-family: 'Montserrat', sans-serif; /* Modern, clean font */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Paragraph Styling */
+.company-description p {
+    font-size: 1.125rem; /* Slightly larger font size for better readability */
+    line-height: 1.7; /* Increased line spacing for improved readability */
+    color: #4a4a4a; /* Neutral text color for modern look */
+    margin-bottom: 25px; /* Space below paragraphs for clarity */
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #carouselExampleControls {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 35px; /* Adjust control size */
+        height: 35px; /* Adjust control size */
+    }
+
+    .carousel-control-prev-icon::after,
+    .carousel-control-next-icon::after {
+        font-size: 18px; /* Adjust icon size */
+    }
+
+    #content {
+        padding: 0; /* No padding on smaller screens */
+    }
+
+    .company-description {
+        margin-top: -40px; /* Adjust overlap effect */
+        padding: 15px; /* Reduce padding */
+    }
+}
+
+/* Import a premium font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+/* Brand Images Styles */
+.brand-images {
+    padding: 30px;
+    background-color: #ffffff; /* Soft, modern yellowish shade for background */
+    border-radius: 20px; /* Rounded corners for a contemporary look */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Soft shadow for elegance */
+    margin: 20px; /* Margin around the section */
+}
+
+.brand-images h2 {
+    text-align: center;
+    margin-bottom: 40px; /* Space below the heading */
+    font-size: 32px; /* Larger font size for emphasis */
+    font-weight: 700; /* Bold font weight */
+    color: RGB(0,113,206); /* Dark color for text */
+    text-transform: uppercase; /* Uppercase text for formality */
+    letter-spacing: 1px; /* Increased letter spacing */
+    border-bottom: 3px solid RGB(0,113,206); /* Underline effect */
+    padding-bottom: 15px; /* Space between text and underline */
+    font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+.brand-images .row {
+    margin: 0;
+}
+
+.brand-images .col-md-3, .brand-images .col-sm-4, .brand-images .col-6 {
+    padding: 5px; /* Adjusted padding to reduce space between boxes */
+}
+
+.brand-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Less space between rows */
+}
+
+.brand-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-content {
+    background: #ffffff; /* Solid background color for the box */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Soft shadow for premium look */
+    text-align: center;
+    padding: 20px; /* Padding for spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 220px; /* Tile width */
+    height: 220px; /* Tile height */
+    margin: 8px; /* Margin to fit more boxes per row */
+}
+
+.brand-content:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.brand-logo {
+    width: 120px; /* Uniform logo size */
+    height: 120px; /* Uniform logo size */
+    object-fit: contain; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space between logo and text */
+}
+
+.brand-name {
+    font-size: 18px; /* Readable text size */
+    font-weight: 500; /* Medium font weight */
+    margin: 0;
+    color: #333; /* Dark color for readability */
+    font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+/* Responsive design adjustments */
+@media (min-width: 992px) { /* Large screens (desktops) */
+    .col-md-3 {
+        flex: 0 0 20%; /* 5 boxes per row */
+        max-width: 20%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) { /* Medium screens (tablets) */
+    .col-sm-4 {
+        flex: 0 0 25%; /* 4 boxes per row */
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 767px) { /* Small screens (phones) */
+    .col-6 {
+        flex: 0 0 50%; /* 2 boxes per row */
+        max-width: 50%;
+    }
+}
+
+/* Categories Section Styles */
+.categories-section {
+    background-color: #ffffff; /* Full white background */
+    padding: 20px; /* Padding around the section */
+    margin: 0; /* Remove margin */
+    display: flex;
+    flex-direction: column; /* Stack heading and slider vertically */
+    align-items: center; /* Center content horizontally */
+    width: 100%; /* Full width of the screen */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    border-bottom: 5px solid #041f41; /* Blue bottom border */
+    padding-bottom: 30px; /* Space between content and bottom border */
+}
+
+.categories-section h2 {
+    font-size: 2.5rem; /* Increase heading size */
+    color: RGB(0, 113, 206); /* Dark color for text */
+    margin-bottom: 20px; /* Space between heading and slider */
+    text-align: center; /* Center heading text */
+}
+
+.category-slider {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    padding: 20px 0; /* Padding around the section */
+    gap: 5px; /* Space between buttons */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Full width of the container */
+}
+
+/* Category Item Styles */
+.category-item {
+    min-width: 300px; /* Minimum width for each button */
+    min-height: 300px; /* Minimum height for each button */
+    max-width: 300px; /* Maximum width for each button */
+    max-height: 300px; /* Maximum height for each button */
+    border-radius: 50%; /* Make the button circular */
+    overflow: hidden; /* Ensure the image doesn't overflow the button */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    border: none; /* Remove border */
+    background: none; /* Remove background */
+}
+
+/* Category Item Image Styles */
+.category-item img {
+    width: 100%; /* Make image width 100% of the button */
+    height: 100%; /* Make image height 100% of the button */
+    object-fit: cover; /* Ensure the image covers the button area */
+    border-radius: 50%; /* Ensure the image remains circular */
+}
+
+.category-item:hover {
+    transform: scale(1.05); /* Slightly larger on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 767px) {
+    .category-item {
+        width: 250px; /* Adjust size on small screens */
+        height: 250px; /* Adjust size on small screens */
+    }
+
+    .category-item img {
+        width: 100%; /* Adjust image size to fit within smaller button */
+        height: 100%; /* Adjust image size to fit within smaller button */
+    }
+}
+
+
+/* About Us and Contact Us Sections */
+.about-section, .contact-section {
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-bottom: 5px solid #3d3b3b; /* Blue bottom border */
+
+
+}

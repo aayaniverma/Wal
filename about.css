@@ -1,0 +1,354 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: RGB(255, 194, 32);
+}
+
+/* Overall header styling */
+header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(178, 195, 200, 0.931);
+    color: white;
+    padding: 5px 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    height: 50px;
+}
+
+/* Logo styling */
+#company-logo {
+    height: 30px;
+    width: auto;
+}
+
+/* Search bar styling */
+.search-bar {
+    border: none;
+    border-radius: 25px;
+    padding: 8px 15px;
+    font-size: 14px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 300px;
+    transition: background-color 0.3s ease;
+}
+
+/* Search button styling */
+.search-btn {
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #a4b4c5, #727578);
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn:hover {
+    background: linear-gradient(145deg, #0056b3, #003d7a);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.search-btn:active {
+    background: linear-gradient(145deg, #003d7a, #0056b3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    header.navbar {
+        padding: 5px 10px;
+        height: 45px;
+    }
+
+    .search-bar {
+        font-size: 14px;
+        width: 200px;
+    }
+
+    #company-logo {
+        height: 25px;
+    }
+
+    .search-btn {
+        font-size: 14px;
+    }
+}
+
+.drawer-toggle-btn {
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    position: fixed;
+    top: 70px;
+    left: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover and Focus Styling */
+.drawer-toggle-btn:hover,
+.drawer-toggle-btn:focus {
+    background-color: #f0f0f0;
+    color: #007bff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active State */
+.drawer-toggle-btn:active {
+    background-color: #e0e0e0;
+}
+
+/* Drawer Styles */
+.drawer {
+    height: 100%;
+    width: 280px;
+    position: fixed;
+    z-index: 1000;
+    top: 60px;
+    left: -280px;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: left 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-right: 1px solid #ddd;
+}
+
+/* Show Drawer */
+.drawer.open {
+    left: 0;
+}
+
+/* Navigation Links */
+.drawer a {
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    display: block;
+    transition: color 0.3s, background-color 0.3s, padding-left 0.3s, font-weight 0.3s;
+    border-radius: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hover Effect on Links */
+.drawer a:hover {
+    color: #ffffff;
+    background-color: #96989a;
+    padding-left: 30px;
+    font-weight: 600;
+}
+
+/* Hover Effect on Drawer */
+.drawer:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Subcategories Styles */
+.sub-categories {
+    display: none;
+    padding-left: 20px;
+    background-color: #f1f1f1;
+    border-left: 2px solid #ddd;
+}
+
+.drawer .nav-item:hover .sub-categories {
+    display: block;
+}
+
+/* Subcategory Link Styles */
+.sub-categories .nav-item a {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #666;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.sub-categories .nav-item a:hover {
+    color: #ffffff;
+    background-color: #a0a2a4;
+}
+
+/* Carousel Styles */
+.single-image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0);
+    z-index: 1;
+}
+
+.single-image-section img {
+    width: 40%;
+    height: auto;
+    margin-right: 20px; /* Adjust margin for space between image and text */
+}
+
+/* Text Beside Image Styling */
+.text-below-image {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    border: none;
+}
+
+/* Text Beside Image on the Right */
+.single-image-section.right img {
+    order: 2;
+    margin-left: 20px; /* Adjust margin for space between text and image */
+    margin-right: 0; /* Remove right margin */
+}
+
+.single-image-section.right .text-below-image {
+    order: 1;
+}
+
+/* Text Styling */
+.text-below-image h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #1c1c1c;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    text-transform: capitalize;
+    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.text-below-image p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin-bottom: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Brand Images Section */
+.brand-images {
+    text-align: center;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+/* Header Styling */
+.brand-images h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 700;
+    color: RGB(0,113,206);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid RGB(0,113,206);
+    padding-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Brand Box Styling */
+.brand-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* Brand Content Styling */
+.brand-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Brand Image Styling */
+.brand-content img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+/* Hover Effect */
+.brand-content img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Beside Image Styling */
+.brand-box .text-below-image {
+    margin-left: 20px;
+    max-width: 600px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Adjust spacing for content sections */
+.content {
+    padding-top: 80px; /* Add padding to avoid overlap with fixed header */
+}
+
+.content section {
+    padding: 40px 20px;
+}
+
+/* Unique content classes for different images */
+.content1 .single-image-section {
+    flex-direction: row; /* Default, image on left */
+}
+
+.content2 .single-image-section {
+    flex-direction: row-reverse; /* Image on right */
+}
+
