@@ -391,8 +391,8 @@ header.navbar {
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     margin: 10px; /* Increase this value for more spacing around the content */
 }
 
